@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Dollar_Computers
 {
-    public partial class Form1 : Form
+    public partial class StartForm : Form
     {
-        public Form1()
+        public StartForm()
         {
             InitializeComponent();
+        }
+
+        private void NewOrderButton_Click(object sender, EventArgs e)
+        {
+            Program.selectForm.Show();
+            this.Hide();
         }
     }
 }
