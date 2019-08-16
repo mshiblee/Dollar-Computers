@@ -8,7 +8,7 @@ using System.Windows.Forms;
 /*Assignment 5, Dollar Computers
  * MUHAMMAD SHIBLEE
  * 301064587
- * Version 2.0 (Entity Framework connect to the Database)
+ * Version 3.0 (ProductInfoForm and OrderForm functionalities created)
  * Last modified on 16 Aug, 2019
  */
 
@@ -23,6 +23,7 @@ namespace Dollar_Computers
         public static ProductInfoForm productInfoForm;
         public static OrderForm orderForm;
         public static AboutForm aboutForm;
+        public static ProductDetails productDetails;
 
         public static Product product;
 
@@ -42,8 +43,9 @@ namespace Dollar_Computers
             productInfoForm = new ProductInfoForm();
             orderForm = new OrderForm();
             aboutForm = new AboutForm();
-
+            productDetails = new ProductDetails();
             product = new Product();
+
 
             Application.Run(selectForm);
         }

@@ -31,18 +31,48 @@ namespace Dollar_Computers
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
+            // give feedback to the user that the file has been saved
+            // this is a "modal" form
             MessageBox.Show("Thanks for your order, Your order will be processed in 7-10 business days.");
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProductPrintForm.PrintAction = PrintAction.PrintToPreview;
             ProductPrintForm.Print();
+        }
+
+        private void OrderForm_Activated(object sender, EventArgs e)
+        {
+            OrderFormConditionTextBox.Text = Program.productDetails.Condition;
+            OrderFormPlatformTextBox.Text = Program.productDetails.Platform;
+            OrderFormManufacturerTextBox.Text = Program.productDetails.Manufacturer;
+            OrderFormModelTextBox.Text = Program.productDetails.Model;
+
+            OrderFormTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.LCDSize + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.RamSize + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.CPUBrand + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.CPUType + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.CPUNumber + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.CPUSpeed + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.HDDSize + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.GPUType + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.WebCam + "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.OS + "\r\n";
+
+            PriceTextBox.Text = $"{Program.productDetails.Cost:C2}".ToString();
+            SalesTaxTextBox.Text = $"{(Program.productDetails.Cost * 0.13):C2}".ToString();
+            TotalPriceTextBox.Text = $"{(Program.productDetails.Cost + (Program.productDetails.Cost * 0.13)):C2}".ToString();
         }
     }
 }
