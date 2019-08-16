@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dollar_Computers
+namespace Dollar_Computers.Views
 {
     public partial class OrderForm : Form
     {
@@ -33,7 +33,12 @@ namespace Dollar_Computers
         {
             // give feedback to the user that the file has been saved
             // this is a "modal" form
-            MessageBox.Show("Thanks for your order, Your order will be processed in 7-10 business days.");
+            //MessageBox.Show("Thanks for your order, Your order will be processed in 7-10 business days.");
+            DialogResult dialogResult = MessageBox.Show("Thanks for your order\n\nYour order will be processed in 7-10 business days", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,7 +54,7 @@ namespace Dollar_Computers
             OrderFormManufacturerTextBox.Text = Program.productDetails.Manufacturer;
             OrderFormModelTextBox.Text = Program.productDetails.Model;
 
-            OrderFormTextBox.Text += "\r\n";
+            OrderFormMultilineTextBox.Text += "\r\n";
             OrderFormMultilineTextBox.Text += Program.productDetails.LCDSize + "\r\n";
             OrderFormMultilineTextBox.Text += "\r\n";
             OrderFormMultilineTextBox.Text += Program.productDetails.RamSize + "\r\n";

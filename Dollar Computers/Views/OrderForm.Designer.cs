@@ -1,4 +1,4 @@
-﻿namespace Dollar_Computers
+﻿namespace Dollar_Computers.Views
 {
     partial class OrderForm
     {

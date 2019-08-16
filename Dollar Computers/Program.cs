@@ -8,7 +8,7 @@ using System.Windows.Forms;
 /*Assignment 5, Dollar Computers
  * MUHAMMAD SHIBLEE
  * 301064587
- * Version 3.0 (ProductInfoForm and OrderForm functionalities created)
+ * Version 4.0 (openFileDialogue and saveFileDialogue have been created)
  * Last modified on 16 Aug, 2019
  */
 
@@ -47,7 +47,7 @@ namespace Dollar_Computers
             product = new Product();
 
 
-            Application.Run(selectForm);
+            Application.Run(splashForm);
         }
     }
 }
