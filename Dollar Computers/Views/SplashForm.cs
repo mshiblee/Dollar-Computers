@@ -37,8 +37,9 @@ namespace Dollar_Computers.Views
         private void SplashTimer_Tick(object sender, EventArgs e)
         {
             SplashTimer.Enabled = false;
-            Program.startForm.Show();
             this.Hide();
+            Program.startForm.Show();
+            
         }
     }
 }

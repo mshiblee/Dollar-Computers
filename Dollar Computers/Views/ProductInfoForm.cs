@@ -20,8 +20,8 @@ namespace Dollar_Computers.Views
 
         private void ProductFormNextButton_Click(object sender, EventArgs e)
         {
-            Program.orderForm.Show();
             this.Hide();
+            Program.orderForm.Show();          
         }
 
         private void ProductFormCancelButton_Click(object sender, EventArgs e)
@@ -31,8 +31,8 @@ namespace Dollar_Computers.Views
 
         private void SelectButton_Click(object sender, EventArgs e)
         {
-            Program.selectForm.Show();
             this.Hide();
+            Program.selectForm.Show();           
         }
 
         private void ProductInfoForm_Activated(object sender, EventArgs e)

@@ -19,13 +19,14 @@ namespace Dollar_Computers.Views
 
         private void NewOrderButton_Click(object sender, EventArgs e)
         {
-            Program.selectForm.Show();
             this.Hide();
+            Program.selectForm.Show();          
         }
 
         private void SavedOrderButton_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Program.productInfoForm.Show();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

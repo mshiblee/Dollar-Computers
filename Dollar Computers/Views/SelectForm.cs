@@ -21,8 +21,8 @@ namespace Dollar_Computers
 
         private void SelectFormNextButton_Click(object sender, EventArgs e)
         {
-            Program.productInfoForm.Show();
             this.Hide();
+            Program.productInfoForm.Show();         
         }
 
         private void SelectFormCancelButton_Click(object sender, EventArgs e)
@@ -40,6 +40,7 @@ namespace Dollar_Computers
                     db.products.Load();
                     productBindingSource.DataSource = db.products.Local.ToBindingList();
                     SelectFormNextButton.Enabled = false;
+                    SelectionTextBox.Text = "";
                 }
             }
         }

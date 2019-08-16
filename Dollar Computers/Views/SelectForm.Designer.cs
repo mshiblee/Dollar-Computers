@@ -116,6 +116,7 @@
             this.SelectionTextBox.Name = "SelectionTextBox";
             this.SelectionTextBox.Size = new System.Drawing.Size(429, 26);
             this.SelectionTextBox.TabIndex = 4;
+            this.SelectionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ProductDataGridView
             // 

@@ -25,8 +25,8 @@ namespace Dollar_Computers.Views
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Program.productInfoForm.Show();
             this.Hide();
+            Program.productInfoForm.Show();          
         }
 
         private void FinishButton_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Dollar_Computers.Views
             OrderFormManufacturerTextBox.Text = Program.productDetails.Manufacturer;
             OrderFormModelTextBox.Text = Program.productDetails.Model;
 
-            OrderFormMultilineTextBox.Text += "\r\n";
+            //OrderFormMultilineTextBox.Text += "\r\n";
             OrderFormMultilineTextBox.Text += Program.productDetails.LCDSize + "\r\n";
             OrderFormMultilineTextBox.Text += "\r\n";
             OrderFormMultilineTextBox.Text += Program.productDetails.RamSize + "\r\n";
@@ -73,11 +73,16 @@ namespace Dollar_Computers.Views
             OrderFormMultilineTextBox.Text += "\r\n";
             OrderFormMultilineTextBox.Text += Program.productDetails.WebCam + "\r\n";
             OrderFormMultilineTextBox.Text += "\r\n";
-            OrderFormMultilineTextBox.Text += Program.productDetails.OS + "\r\n";
+            OrderFormMultilineTextBox.Text += Program.productDetails.OS;
 
             PriceTextBox.Text = $"{Program.productDetails.Cost:C2}".ToString();
             SalesTaxTextBox.Text = $"{(Program.productDetails.Cost * 0.13):C2}".ToString();
             TotalPriceTextBox.Text = $"{(Program.productDetails.Cost + (Program.productDetails.Cost * 0.13)):C2}".ToString();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.aboutForm.ShowDialog();
         }
     }
 }
