@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dollar_Computers
+namespace Dollar_Computers.Views
 {
     public partial class SplashForm : Form
     {

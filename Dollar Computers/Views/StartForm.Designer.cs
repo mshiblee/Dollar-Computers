@@ -1,4 +1,4 @@
-﻿namespace Dollar_Computers
+﻿namespace Dollar_Computers.Views
 {
     partial class StartForm
     {
@@ -57,6 +57,7 @@
             this.SavedOrderButton.TabIndex = 1;
             this.SavedOrderButton.Text = "Open a Saved Order";
             this.SavedOrderButton.UseVisualStyleBackColor = true;
+            this.SavedOrderButton.Click += new System.EventHandler(this.SavedOrderButton_Click);
             // 
             // ExitButton
             // 
@@ -67,6 +68,7 @@
             this.ExitButton.TabIndex = 2;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // OrderLabel
             // 

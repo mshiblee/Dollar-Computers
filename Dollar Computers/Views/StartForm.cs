@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dollar_Computers
+namespace Dollar_Computers.Views
 {
     public partial class StartForm : Form
     {
@@ -21,6 +21,16 @@ namespace Dollar_Computers
         {
             Program.selectForm.Show();
             this.Hide();
+        }
+
+        private void SavedOrderButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dollar_Computers.Models;
+using Dollar_Computers.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,19 +8,23 @@ using System.Windows.Forms;
 /*Assignment 5, Dollar Computers
  * MUHAMMAD SHIBLEE
  * 301064587
- * Version 1.0 (UI completed)
- * Last modified on 05 Aug, 2019
+ * Version 2.0 (Entity Framework connect to the Database)
+ * Last modified on 16 Aug, 2019
  */
 
 namespace Dollar_Computers
 {
     public static class Program
     {
+        //static members
         public static SplashForm splashForm;
         public static StartForm startForm;
         public static SelectForm selectForm;
         public static ProductInfoForm productInfoForm;
         public static OrderForm orderForm;
+        public static AboutForm aboutForm;
+
+        public static Product product;
 
         /// <summary>
         /// The main entry point for the application.
@@ -29,13 +35,17 @@ namespace Dollar_Computers
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            //instantiate all forms here
             splashForm = new SplashForm();
             startForm = new StartForm();
             selectForm = new SelectForm();
             productInfoForm = new ProductInfoForm();
             orderForm = new OrderForm();
+            aboutForm = new AboutForm();
 
-            Application.Run(splashForm);
+            product = new Product();
+
+            Application.Run(selectForm);
         }
     }
 }

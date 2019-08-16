@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Dollar_Computers.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,6 +28,15 @@ namespace Dollar_Computers
         private void SelectFormCancelButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SelectForm_Load(object sender, EventArgs e)
+        {
+            using(var db = new DollarComputersContext())
+            {
+                db.products.Load();
+                productBindingSource.DataSource = db.products.Local.ToBindingList();
+            }
         }
     }
 }
